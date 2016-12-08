@@ -1,8 +1,6 @@
 
 package triviasmack;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import com.amazon.speech.slu.Intent;
 import com.amazon.speech.slu.Slot;
@@ -18,30 +16,31 @@ import com.amazon.speech.ui.PlainTextOutputSpeech;
 import com.amazon.speech.ui.SsmlOutputSpeech;
 import com.amazon.speech.ui.Reprompt;
 import com.amazon.speech.ui.SimpleCard;
+import java.util.logging.Logger;
 
 public class TriviaSmackSpeechlet implements Speechlet {
-    private static final Logger log = LoggerFactory.getLogger(TriviaSmackSpeechlet.class);
+
+  private final static Logger log = Logger.getLogger(TriviaSmackSpeechlet.class.getName());
+
     @Override
     public void onSessionStarted(final SessionStartedRequest request, final Session session)
             throws SpeechletException {
-        log.info("onSessionStarted requestId={}, sessionId={}", request.getRequestId(),
-                session.getSessionId());
+        
     }
 
     @Override
     public SpeechletResponse onLaunch(final LaunchRequest request, final Session session)
             throws SpeechletException {
-        log.info("onLaunch requestId={}, sessionId={}", request.getRequestId(),
-                session.getSessionId());
+        System.out.println("Hello");
+
+        
         return getWelcomeResponse();
     }
 
     @Override
     public SpeechletResponse onIntent(final IntentRequest request, final Session session)
             throws SpeechletException {
-        log.info("onIntent requestId={}, sessionId={}", request.getRequestId(),
-                session.getSessionId());
-
+        
         Intent intent = request.getIntent();
 
         String intentName = (intent != null) ? intent.getName() : null;
@@ -66,8 +65,7 @@ public class TriviaSmackSpeechlet implements Speechlet {
     @Override
     public void onSessionEnded(final SessionEndedRequest request, final Session session)
             throws SpeechletException {
-        log.info("onSessionEnded requestId={}, sessionId={}", request.getRequestId(),
-                session.getSessionId());
+        
     }
 
     public String concatenate(String one, String two){
