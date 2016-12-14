@@ -22,4 +22,16 @@ public class TeamSetupTest {
     TeamSetup teamSetup = new TeamSetup();
     assertEquals("Game Setup Complete. Team one name is pandas, team two name is dolphins. Please say start quiz to begin.", teamSetup.setupTeams("pandas", "dolphins"));
   }
+
+  @Test
+  public void defineTeamTwoUserTest() {
+    TeamSetup teamSetup = new TeamSetup();
+    assertEquals(teamSetup.defineUser("pandas", "pandas", "dolphins"), "dolphins");
+  }
+
+  @Test
+  public void defineTeamOneUserTest() {
+    TeamSetup teamSetup = new TeamSetup();
+    assertEquals(teamSetup.defineUser("dolphins", "pandas", "dolphins"), "pandas");
+  }
 }
