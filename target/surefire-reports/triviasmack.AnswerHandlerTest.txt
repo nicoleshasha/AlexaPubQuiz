@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: triviasmack.AnswerHandlerTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 7.879 sec <<< FAILURE!
-testSetQuestion(triviasmack.AnswerHandlerTest)  Time elapsed: 0.146 sec  <<< ERROR!
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 8.556 sec <<< FAILURE!
+testSetQuestion(triviasmack.AnswerHandlerTest)  Time elapsed: 0.203 sec  <<< ERROR!
 org.mockito.exceptions.base.MockitoException: 
 Cannot mock/spy class java.lang.String
 Mockito cannot mock/spy because :
